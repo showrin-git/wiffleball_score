@@ -1,0 +1,6 @@
+{
+  "AppSyncApiName": "wiffleballproject",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthModeLastUpdated": "2023-11-13T11:47:23.052Z"
+}

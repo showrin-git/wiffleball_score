@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-wiffleballproject-dev-202617-authRole",
+      "UnauthRoleArn": "arn:aws:iam::490376042754:role/amplify-wiffleballproject-dev-202617-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::490376042754:role/amplify-wiffleballproject-dev-202617-authRole",
+      "Region": "ap-northeast-1",
+      "DeploymentBucketName": "amplify-wiffleballproject-dev-202617-deployment",
+      "UnauthRoleName": "amplify-wiffleballproject-dev-202617-unauthRole",
+      "StackName": "amplify-wiffleballproject-dev-202617",
+      "StackId": "arn:aws:cloudformation:ap-northeast-1:490376042754:stack/amplify-wiffleballproject-dev-202617/76b5aae0-8217-11ee-94c9-067d6bfa8947",
+      "AmplifyAppId": "dadzt8b8x0w9c"
+    },
+    "categories": {
+      "api": {
+        "wiffleballproject": {}
+      }
+    }
+  }
+}
