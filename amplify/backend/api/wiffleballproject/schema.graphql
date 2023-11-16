@@ -1,6 +1,61 @@
+type TeamToPlayer @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  team_id: ID!
+  player_id: ID!
+}
+
+type Order @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  game_id: ID
+  team_id: ID
+  player_id: ID
+  order: Int
+  position: String
+  is_starter: Boolean
+}
+
+enum BattedBallDirection {
+  RIGHT
+  CENTER
+  LEFT
+}
+
+enum BattedBallType {
+  FLY
+  GROUND_BALL
+  LINER
+}
+
+type EventMaster @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  code: Int!
+  name: String!
+  batted_ball_type: BattedBallType
+  batted_ball_direction: BattedBallDirection
+  base_hits: Int!
+  out: Boolean!
+}
+
+type Play @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  game_id: ID!
+  pitcher_player_id: ID!
+  batter_player_id: ID!
+  event_code: Int!
+}
+
+type Game @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  preceding_team_id: ID!
+  second_team_id: ID!
+  stadium: String
+  start_time: AWSDateTime
+}
+
 type Player @model @auth(rules: [{allow: public}]) {
   id: ID!
   name: String
+  number: String
 }
 
 type Team @model @auth(rules: [{allow: public}]) {

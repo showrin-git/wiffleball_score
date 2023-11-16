@@ -1,28 +1,30 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import ListTeamsComponent from './components/ListTeams';
+import 'react-native-gesture-handler';
+import React,{ Component } from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import HomeScreen from './pages/HomeScreen';
+import StartScreen from './pages/StartScreen';
+import { createStackNavigator } from '@react-navigation/stack';
+import { NativeBaseProvider, useTheme } from 'native-base';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      {/* Replace this text with your actual app content */}
-      <Text>Welcome to Your React Native App!</Text>
+const Stack = createStackNavigator();
 
-      {/* ListTeamsComponent renders the list of teams */}
-      <ListTeamsComponent />
-
-      {/* The StatusBar component */}
-      <StatusBar style="auto" />
-    </View>
-  );
+export default class App extends Component{
+  render() {
+    return (
+      <NativeBaseProvider>
+        <NavigationContainer>
+          <Stack.Navigator initialRouteName="HomeScreen">
+            <Stack.Screen
+              name="HomeScreen"
+              component={HomeScreen}
+            />
+            <Stack.Screen
+              name="StartScreen"
+              component={StartScreen}
+            />
+          </Stack.Navigator>
+        </NavigationContainer>        
+      </NativeBaseProvider>
+    );
+  }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

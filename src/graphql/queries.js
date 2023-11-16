@@ -61,3 +61,26 @@ export const listTeams = /* GraphQL */ `
     }
   }
 `;
+
+export const listGames = /* GraphQL */ `
+  query ListGames(
+    $filter: ModelGameFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listGames(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        preceding_team_id
+        second_team_id
+        stadium
+        start_time
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+  }
+`;
