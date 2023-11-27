@@ -5,7 +5,7 @@ import HomeScreen from './pages/HomeScreen';
 import StartScreen from './pages/StartScreen';
 import GamesScreen from './pages/GamesScreen';
 import { createStackNavigator } from '@react-navigation/stack';
-import { NativeBaseProvider, useTheme } from 'native-base';
+import { NativeBaseProvider} from 'native-base';
 import { Amplify } from 'aws-amplify';
 
 import awsconfig from './src/aws-exports';

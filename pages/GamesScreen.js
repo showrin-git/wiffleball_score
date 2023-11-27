@@ -2,12 +2,14 @@ import React, {Component} from 'react';
 import { StyleSheet, Dimensions } from 'react-native';
 import { Container, Button, Text, View } from 'native-base';
 import ListGamesComponent from '../components/ListGames';
+import CreateGameComponent from '../components/CreateGame';
 
 class GamesScreen extends Component{
   render(){
     return (
       <Container>
         <View style={styles.view}>
+          <CreateGameComponent></CreateGameComponent>
           <ListGamesComponent></ListGamesComponent>
           <Button
             onPress={() => this.props.navigation.navigate('HomeScreen')}
