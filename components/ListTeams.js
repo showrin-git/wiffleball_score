@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from "react";
-import { Amplify, API, graphqlOperation } from 'aws-amplify';
+import { Amplify, graphqlOperation } from 'aws-amplify';
+import { generateClient } from "aws-amplify/api";
 import { listTeams } from "../src/graphql/queries";
 import awsconfig from '../src/aws-exports';
 Amplify.configure(awsconfig);
-
+const client = generateClient();
 function ListTeamsComponent() {
     const [allTeams, setAllTeams] = useState([]);
 
     useEffect(() => {
         const fetchTeams = async () => {
             try {
-                const result = await API.graphql({
+                const result = await client.graphql({
                     query: listTeams
                 });
                 setAllTeams(result.data.listTeams.items);

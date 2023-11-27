@@ -1,7 +1,7 @@
 type TeamToPlayer @model @auth(rules: [{allow: public}]) {
   id: ID!
   team_id: ID!
-  player_id: ID!
+  player_id: ID
 }
 
 type Order @model @auth(rules: [{allow: public}]) {

@@ -1,32 +1,23 @@
 import React, {Component} from 'react';
 import { StyleSheet, Dimensions } from 'react-native';
 import { Container, Button, Text, View } from 'native-base';
+import ListGamesComponent from '../components/ListGames';
 
-class HomeScreen extends Component{
+class GamesScreen extends Component{
   render(){
     return (
       <Container>
         <View style={styles.view}>
+          <ListGamesComponent></ListGamesComponent>
           <Button
-            onPress={() => this.props.navigation.navigate('StartScreen',{
-              data: 'test'
-            })}
+            onPress={() => this.props.navigation.navigate('HomeScreen')}
             transparent
             style={styles.button}
           >
-            <Text style={styles.text}>起動</Text>
-          </Button>
-          <Button
-            onPress={() => this.props.navigation.navigate('GamesScreen',{
-              data: 'test'
-            })}
-            transparent
-            style={styles.button}
-          >
-            <Text style={styles.text}>試合一覧</Text>
+            <Text style={styles.text}>ホーム画面へ</Text>
           </Button>
         </View>
-      </Container>    
+     </Container>   
     );
   }        
 }
@@ -49,5 +40,4 @@ const styles = StyleSheet.create({
     fontSize:20,
   }
 });
-
-export default HomeScreen;
+export default GamesScreen;
